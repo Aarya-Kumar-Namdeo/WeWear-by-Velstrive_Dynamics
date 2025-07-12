@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ReWear - Sustainable Fashion</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: #0F172A;
+      color: #E2E8F0;
+    }
+    .primary-text {
+      color: #22D3EE;
+    }
+    .accent-bg {
+      background-color: #1E293B;
+    }
+    .button {
+      background-color: #22D3EE;
+      color: #0F172A;
+      transition: all 0.3s ease;
+    }
+    .button:hover {
+      background-color: #0EA5E9;
+      transform: scale(1.05);
+    }
+    .hover-tile {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .hover-tile:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    }
+    .hide-header {
+      transform: translateY(-100%);
+      transition: transform 0.3s ease-in-out;
+    }
+    .show-header {
+      transform: translateY(0);
+      transition: transform 0.3s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <header id="mainHeader" class="fixed top-0 left-0 w-full z-50 bg-[#0F172A] shadow-md text-white show-header">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="text-4xl font-extrabold primary-text cursor-pointer" onclick="location.href='index.html'">ReWear</div>
+      <nav class="hidden md:flex items-center space-x-6 text-sm">
+        <a href="#collection" class="hover:text-cyan-300 transition">Collection</a>
+        <a href="#categories" class="hover:text-cyan-300 transition">Categories</a>
+        <a href="#trending" class="hover:text-cyan-300 transition">Trending</a>
+        <a href="#sale" class="hover:text-cyan-300 transition">Sale</a>
+      </nav>
+      <div class="flex items-center gap-4">
+        <input type="text" placeholder="Search..." class="px-3 py-1 rounded-md hidden md:block bg-gray-800 border border-gray-700 text-white">
+        <a href="login.html" class="hover:text-cyan-400">Login</a>
+        <a href="cart.html" class="hover:text-cyan-400">Cart 🛒</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-24">
+    <section class="relative h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=1470&q=80');">
+      <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+      <div class="relative z-10 text-center px-6" data-aos="fade-up">
+        <h1 class="text-white text-4xl md:text-6xl font-bold mb-4">Exchange. Earn. ReWear.</h1>
+        <p class="text-white text-lg mb-6 max-w-xl mx-auto">Join the sustainable fashion revolution in India. Trade fashion. Save the planet.</p>
+        <a href="#collection" class="button px-6 py-3 rounded-full font-semibold">Start Swapping</a>
+      </div>
+    </section>
+
+    <section id="categories" class="py-20 px-6 accent-bg">
+      <div class="max-w-7xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-12 primary-text">Shop by Category</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
+          <div class="p-10 bg-gray-800 hover-tile rounded-lg cursor-pointer h-60" onclick="location.href='category-men.html'">Men</div>
+          <div class="p-10 bg-gray-800 hover-tile rounded-lg cursor-pointer h-60" onclick="location.href='category-women.html'">Women</div>
+          <div class="p-10 bg-gray-800 hover-tile rounded-lg cursor-pointer h-60" onclick="location.href='category-kids.html'">Kids</div>
+          <div class="p-10 bg-gray-800 hover-tile rounded-lg cursor-pointer h-60" onclick="location.href='category-accessories.html'">Accessories</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="trending" class="py-20 px-6">
+      <div class="max-w-7xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-12 primary-text">Trending Now</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-gray-900 rounded-lg overflow-hidden shadow hover-tile">
+            <img src="https://images.unsplash.com/photo-1613418446625-d0154f85dcdf?auto=format&fit=crop&w=900&q=80" class="w-full h-72 object-cover" alt="Oversized Hoodie">
+            <div class="p-4">
+              <h3 class="font-semibold text-lg text-white">Oversized Hoodie</h3>
+              <p class="text-sm text-gray-400">Popular in all genders</p>
+            </div>
+          </div>
+          <div class="bg-gray-900 rounded-lg overflow-hidden shadow hover-tile">
+            <img src="https://images.unsplash.com/photo-1611448744237-b1c66bc4db13?auto=format&fit=crop&w=900&q=80" class="w-full h-72 object-cover" alt="Earth Tone Tees">
+            <div class="p-4">
+              <h3 class="font-semibold text-lg text-white">Earth Tone Tees</h3>
+              <p class="text-sm text-gray-400">Sustainable & in style</p>
+            </div>
+          </div>
+          <div class="bg-gray-900 rounded-lg overflow-hidden shadow hover-tile">
+            <img src="https://images.unsplash.com/photo-1582719478170-995b9e6c6b47?auto=format&fit=crop&w=900&q=80" class="w-full h-72 object-cover" alt="Denim on Denim">
+            <div class="p-4">
+              <h3 class="font-semibold text-lg text-white">Denim on Denim</h3>
+              <p class="text-sm text-gray-400">Back in fashion</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sale" class="py-20 px-6 accent-bg">
+      <div class="max-w-7xl mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-6 primary-text">Sale & Offers</h2>
+        <p class="text-gray-400 mb-10">Get up to 50% off on select items. Limited time!</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-gray-900 rounded-lg overflow-hidden shadow hover-tile scale-95">
+            <img src="https://source.unsplash.com/featured/?fashion,1" class="w-full h-56 object-cover" alt="Sale Item 1">
+            <div class="p-4">
+              <h3 class="font-semibold text-lg text-white">Printed Tee</h3>
+              <p class="text-sm text-gray-400">Now ₹499</p>
+            </div>
+          </div>
+          <div class="bg-gray-900 rounded-lg overflow-hidden shadow hover-tile scale-95">
+            <img src="https://source.unsplash.com/featured/?fashion,2" class="w-full h-56 object-cover" alt="Sale Item 2">
+            <div class="p-4">
+              <h3 class="font-semibold text-lg text-white">Light Jacket</h3>
+              <p class="text-sm text-gray-400">Now ₹999</p>
+            </div>
+          </div>
+          <div class="bg-gray-900 rounded-lg overflow-hidden shadow hover-tile scale-95">
+            <img src="https://source.unsplash.com/featured/?fashion,3" class="w-full h-56 object-cover" alt="Sale Item 3">
+            <div class="p-4">
+              <h3 class="font-semibold text-lg text-white">Summer Shorts</h3>
+              <p class="text-sm text-gray-400">Now ₹699</p>
+            </div>
+          </div>
+          <div class="bg-gray-900 rounded-lg overflow-hidden shadow hover-tile scale-95">
+            <img src="https://source.unsplash.com/featured/?fashion,4" class="w-full h-56 object-cover" alt="Sale Item 4">
+            <div class="p-4">
+              <h3 class="font-semibold text-lg text-white">Casual Shirt</h3>
+              <p class="text-sm text-gray-400">Now ₹849</p>
+            </div>
+          </div>
+          <div class="bg-gray-900 rounded-lg overflow-hidden shadow hover-tile scale-95">
+            <img src="https://source.unsplash.com/featured/?fashion,5" class="w-full h-56 object-cover" alt="Sale Item 5">
+            <div class="p-4">
+              <h3 class="font-semibold text-lg text-white">Denim Jeans</h3>
+              <p class="text-sm text-gray-400">Now ₹1199</p>
+            </div>
+          </div>
+          <div class="bg-gray-900 rounded-lg overflow-hidden shadow hover-tile scale-95">
+            <img src="https://source.unsplash.com/featured/?fashion,6" class="w-full h-56 object-cover" alt="Sale Item 6">
+            <div class="p-4">
+              <h3 class="font-semibold text-lg text-white">Layered Hoodie</h3>
+              <p class="text-sm text-gray-400">Now ₹899</p>
+            </div>
+          </div>
+        </div>
+        <div class="mt-8">
+          <a href="#" class="button px-6 py-3 rounded-full font-semibold">View More</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#0F172A] text-gray-300 px-6 py-10 border-t border-gray-700">
+    <div class="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 text-sm">
+      <div>
+        <h4 class="font-semibold mb-2">Shop</h4>
+        <ul><li>Ladies</li><li>Men</li><li>Kids</li><li>Home</li><li>Magazine</li></ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-2">Corporate Info</h4>
+        <ul><li>Career at H&M</li><li>About H&M group</li><li>Sustainability H&M Group</li><li>Press</li><li>Investor relations</li><li>Corporate governance</li></ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-2">Help</h4>
+        <ul><li>Customer Service</li><li>My H&M</li><li>Find a store</li><li>Legal & privacy</li><li>Contact</li><li>Secure shopping</li></ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-2">Cookies</h4>
+        <ul><li>Cookie Notice</li><li>Cookie Settings</li></ul>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-2">Stay Updated</h4>
+        <p>Sign up now and be the first to know about exclusive offers, latest fashion news & style tips!</p>
+        <a href="#" class="text-cyan-400 underline">Read more</a>
+      </div>
+    </div>
+    <div class="text-center text-xs text-gray-500 mt-10">
+      <p class="mb-1">H&M | INDIA (Rs.)</p>
+      <p><a href="#" class="underline">Change Region</a></p>
+      <p class="mt-4">&copy; 2025 ReWear. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    AOS.init({ duration: 1000, once: true });
+
+    let lastScrollTop = 0;
+    const header = document.getElementById('mainHeader');
+
+    window.addEventListener('scroll', function () {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollTop > lastScrollTop) {
+        header.classList.remove('show-header');
+        header.classList.add('hide-header');
+      } else {
+        header.classList.remove('hide-header');
+        header.classList.add('show-header');
+      }
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
+  </script>
+</body>
+</html>
