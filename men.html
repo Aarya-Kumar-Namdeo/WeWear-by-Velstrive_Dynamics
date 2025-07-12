@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Men's Section | ReWear</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary-color: #2dd4bf;
+      --accent-color: #fb7185;
+      --text-color: #222;
+      --bg-color: #0F172A;
+      --light: #f8fafc;
+      --card-bg: #1A202C;
+      --dark-text: #E2E8F0;
+      --secondary-text: #CBD5E0;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--dark-text);
+    }
+
+    header {
+      background: var(--card-bg);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #334155;
+    }
+
+    header h1 {
+     background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    }
+
+    nav a {
+      color: var(--dark-text);
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--primary-color);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      font-size: 32px;
+      color: var(--primary-color);
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .product-card {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+      color: var(--dark-text);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-bottom: 1px solid #334155;
+    }
+
+    .product-info {
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-grow: 1;
+    }
+
+    .product-brand {
+      font-size: 14px;
+      color: var(--secondary-text);
+      margin-bottom: 5px;
+    }
+
+    .product-name {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .product-price {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--accent-color);
+    }
+
+    .swap-points {
+      font-size: 14px;
+      color: var(--primary-color);
+      font-weight: 500;
+    }
+
+    footer {
+      text-align: center;
+      background: var(--card-bg);
+      border-top: 1px solid #334155;
+      color: var(--dark-text);
+      padding: 20px;
+      margin-top: 60px;
+      font-size: 14px;
+    }
+
+    footer strong {
+      background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+      /* -webkit-background-clip: text; */
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 onclick="window.location.href='index.html'">ReWear</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="collection.html">Browse</a>
+      <a href="my-swaps.html">My Swaps</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2 class="section-title">Men's Apparel</h2>
+
+    <div class="product-grid">
+
+      <a href="productdetails.html" class="product-card">
+        <img src="images/jacket.jpg" alt="Stylish Men's Winter Jacket">
+        <div class="product-info">
+          <div>
+            <p class="product-brand">ReWear</p>
+            <h3 class="product-name">Stylish Men's Winter Jacket</h3>
+          </div>
+          <div>
+            <p class="product-price">Value: ₹1800</p>
+            <p class="swap-points">Swap Points: 45</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="product2.html" class="product-card">
+        <img src="images/men2.jpg" alt="Casual Checked Shirt">
+        <div class="product-info">
+          <div>
+            <p class="product-brand">Local Brand</p>
+            <h3 class="product-name">Casual Checked Shirt</h3>
+          </div>
+          <div>
+            <p class="product-price">Value: ₹750</p>
+            <p class="swap-points">Swap Points: 25</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="product3.html" class="product-card">
+        <img src="images/men4.jpg" alt="Oversized Graphic T-Shirt">
+        <div class="product-info">
+          <div>
+            <p class="product-brand">Urban Threads</p>
+            <h3 class="product-name">Oversized Graphic T-Shirt</h3>
+          </div>
+          <div>
+            <p class="product-price">Value: ₹600</p>
+            <p class="swap-points">Swap Points: 20</p>
+          </div>
+        </div>
+      </a>
+
+      <a href="product4.html" class="product-card">
+        <img src="images/men3.jpg" alt="Vintage Oversized Tee">
+        <div class="product-info">
+          <div>
+            <p class="product-brand">Retro Fits</p>
+            <h3 class="product-name">Vintage Oversized Tee</h3>
+          </div>
+          <div>
+            <p class="product-price">Value: ₹660</p>
+            <p class="swap-points">Swap Points: 22</p>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 <strong>ReWear</strong> | Sustainable Clothing Exchange Platform
+  </footer>
+
+</body>
+</html>

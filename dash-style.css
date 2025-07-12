@@ -1,0 +1,289 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Outfit', sans-serif;
+}
+
+body {
+  background-color: #0F172A;
+  color: #E2E8F0;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #1E293B;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.brand-logo {
+  height: 90px;
+  width: 195px;
+  max-width: 300px;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-items a {
+  color: #E2E8F0;
+  font-size: larger;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-items a:hover {
+  color: #22D3EE;
+}
+
+.right-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.search-box {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: none;
+}
+
+.subscribe,
+.login-btn {
+  padding: 0.5rem 1rem;
+  background-color: #22D3EE;
+  color: #0F172A;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Hero Section */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1E293B;
+  padding: 3rem 2rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.carousel .slide-content {
+  flex: 1;
+  min-width: 280px;
+  max-width: 600px;
+  text-align: left;
+}
+
+.carousel .card-img {
+  flex: 1;
+  max-width: 500px;
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.movie-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.movie-des {
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+  color: #cbd5e1;
+}
+
+.watchlist-btn {
+  padding: 0.75rem 2rem;
+  background-color: #22D3EE;
+  color: #0F172A;
+  border: none;
+  border-radius: 9999px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Card Section */
+.card-img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.title {
+  font-size: 2rem;
+  margin: 2rem;
+  text-align: center;
+  color: #22D3EE;
+}
+
+.movies-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 2rem;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.card {
+  background-color: #1E293B;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 220px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.des {
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+/* Footer */
+.last-footer {
+  background-color: #0F172A;
+  color: #cbd5e1;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.last-footer-texts h3 {
+  margin-bottom: 1rem;
+}
+
+.last-footer-links a {
+  margin-right: 1rem;
+  color: #22D3EE;
+  text-decoration: none;
+}
+
+.last-footer-images .dwn {
+  width: 120px;
+  margin-right: 1rem;
+}
+
+/* Profile Menu */
+.hidden {
+  display: none !important;
+}
+
+.profile-container {
+  position: relative;
+}
+
+.profile-name {
+  padding: 0.5rem 1rem;
+  background-color: #22D3EE;
+  color: #0F172A;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #1E293B;
+  min-width: 160px;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.dropdown a {
+  padding: 10px 16px;
+  color: white;
+  text-decoration: none;
+}
+
+.dropdown a:hover {
+  background-color: #334155;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .carousel {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .carousel .slide-content {
+    text-align: center;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .right-container {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+    align-items: stretch;
+    margin-top: 1rem;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+}

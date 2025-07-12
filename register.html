@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ReWear - Register</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="register-style.css" />
+</head>
+<body>
+  <div class="register-container">
+    <div class="logo">
+      <img src="images/logo.png" alt="ReWear Logo" />
+    </div>
+    <form id="registerForm" class="register-form">
+      <h2>Create Account</h2>
+      <div class="input-group">
+        <i class='bx bxs-user'></i>
+        <input type="text" id="username" placeholder="Username" required />
+      </div>
+      <div class="input-group">
+        <i class='bx bxs-envelope'></i>
+        <input type="email" id="email" placeholder="Email" required />
+      </div>
+      <div class="input-group">
+        <i class='bx bxs-lock-alt'></i>
+        <input type="password" id="password" placeholder="Password" required />
+      </div>
+      <button type="submit">Sign Up</button>
+
+      <p>Already have an account? <a href="rewear-login.html">Login here</a></p>
+
+      <!-- Google Sign-Up Option -->
+      <div class="google-login">
+        <p>Or</p>
+        <button type="button" class="google-btn">
+          <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google logo">
+          Sign up with Google
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Firebase Scripts (include before your JS) -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="register.js"></script>
+</body>
+</html>

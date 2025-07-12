@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ReWear - Sustainable Fashion</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="dash-style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <img src="images/logo1.png" class="brand-logo" alt="ReWear Logo">
+    <ul class="nav-links">
+      <li class="nav-items"><a href="#">Home</a></li>
+      <li class="nav-items"><a href="#collection">Collection</a></li>
+      <li class="nav-items"><a href="#categories">Categories</a></li>
+      <li class="nav-items"><a href="#sale">Offers</a></li>
+    </ul>
+    <div class="right-container">
+      <input type="text" class="search-box" placeholder="Search">
+      <button class="subscribe">Search</button>
+
+      <!-- Profile (hidden initially) -->
+      <div id="profileMenu" class="profile-container hidden">
+        <button class="profile-name" onclick="toggleDropdown()">
+          <i class='bx bxs-user'></i> <span id="userDisplayName">User</span>
+        </button>
+        <div id="dropdownMenu" class="dropdown hidden">
+          <a href="#">Update Profile</a>
+          <a href="#" onclick="logout()">Logout</a>
+        </div>
+      </div>
+
+      <!-- Login button -->
+      <a href="rewear-login.html" class="login-btn" id="loginBtn">Login</a>
+    </div>
+  </nav>
+
+  <!-- Hero Banner -->
+  <div class="carousel-container">
+    <div class="carousel">
+      <div class="slide-content">
+        <h2 class="movie-title">Exchange. Earn. ReWear.</h2>
+        <p class="movie-des">Join the sustainable fashion revolution in India. Trade fashion. Save the planet.</p>
+        <!-- Start Swapping Button (only if not logged in) -->
+    <button class="watchlist-btn" id="swapBtn" onclick="redirectToLogin()">Start Swapping</button>
+
+      </div>
+      <img src="images/back.jpg" class="card-img" alt="ReWear Hero">
+    </div>
+  </div>
+
+  <!-- Categories -->
+  <h1 class="title" id="categories">Shop by Category</h1>
+  <div class="movies-list">
+    <div class="card-container">
+
+      <a href="men.html" class="card">
+        <img src="images/men1.jpg" class="card-img" alt="Men">
+        <div class="card-body">
+          <h2 class="name">Men</h2>
+          <p class="des">Stylish men's wear ready to swap.</p>
+        </div>
+      </a>
+
+      <a href="women.html" class="card">
+        <img src="images/women2.jpg" class="card-img" alt="Women">
+        <div class="card-body">
+          <h2 class="name">Women</h2>
+          <p class="des">Trendy clothing for women.</p>
+        </div>
+      </a>
+
+      <a href="kids.html" class="card">
+        <img src="images/kids.jpg" class="card-img" alt="Kids">
+        <div class="card-body">
+          <h2 class="name">Kids</h2>
+          <p class="des">Cute clothes for growing kids.</p>
+        </div>
+      </a>
+
+      <a href="accessories.html" class="card">
+        <img src="images/accessories.jpg" class="card-img" alt="Accessories">
+        <div class="card-body">
+          <h2 class="name">Accessories</h2>
+          <p class="des">Bags, scarves, shoes and more.</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- Offers -->
+  <h1 class="title" id="sale">Offers & Deals</h1>
+  <div class="movies-list">
+    <div class="card-container">
+      <div class="card">
+        <img src="images/offer1.jpg" class="card-img" alt="Offer 1">
+        <div class="card-body">
+          <h2 class="name">50% Off Tees</h2>
+          <p class="des">Swap now & earn extra points.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/offer2.jpg" class="card-img" alt="Offer 2">
+        <div class="card-body">
+          <h2 class="name">Flat ₹199</h2>
+          <p class="des">Selected women's tops.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/offer3.jpg" class="card-img" alt="Offer 3">
+        <div class="card-body">
+          <h2 class="name">Bundle Offers</h2>
+          <p class="des">Swap 3 get 1 free.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="last-footer">
+    <div class="last-footer-texts">
+      <h3>© 2025 ReWear. All Rights Reserved.</h3>
+      <div class="last-footer-links">
+        <a href="#">Terms Of Use</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Contact Us</a>
+      </div>
+    </div>
+    <div class="last-footer-images">
+      <a href="#"><img src="images/google-playstore.webp" class="dwn" alt="Play Store"></a>
+      <a href="#"><img src="images/ios-appstore.webp" class="dwn" alt="App Store"></a>
+    </div>
+  </div>
+
+  <!-- Profile Logic Script -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const name = localStorage.getItem('userName');
+      const profileMenu = document.getElementById('profileMenu');
+      const loginBtn = document.getElementById('loginBtn');
+      const userSpan = document.getElementById('userDisplayName');
+
+      if (name && profileMenu && loginBtn && userSpan) {
+        userSpan.textContent = name;
+        profileMenu.classList.remove('hidden');
+        loginBtn.classList.add('hidden');
+      } else {
+        profileMenu.classList.add('hidden');
+        loginBtn.classList.remove('hidden');
+      }
+    });
+
+    function toggleDropdown() {
+      document.getElementById('dropdownMenu')?.classList.toggle('hidden');
+    }
+
+    function logout() {
+      localStorage.removeItem('userName');
+      window.location.href = 'rewear-login.html';
+    }
+      window.addEventListener('DOMContentLoaded', () => {
+    const user = localStorage.getItem('userName');
+    const swapBtn = document.getElementById('swapBtn');
+
+    if (user && swapBtn) {
+      swapBtn.style.display = 'none'; // Hide the button if logged in
+    }
+  });
+
+  function redirectToLogin() {
+    window.location.href = 'rewear-login.html';
+  }
+  </script>
+
+</body>
+</html>
